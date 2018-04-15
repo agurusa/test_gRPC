@@ -1,0 +1,17 @@
+syntax = "proto3";
+package test_gRPC;
+
+service test_gRPC{
+	//simple RPC where client sends a request to a server using the stub and waits for a response to come back.
+	//rpc GetFeature(An_unexciting_request) returns (An_unexciting_request){}
+	rpc GetFeature(An_unexciting_request) returns (An_exciting_response){}
+}
+
+message An_exciting_response{
+	string exciting_response_1 = 1;
+}
+
+message An_unexciting_request{
+	string request_name_1= 1;
+	string request_name_2 = 2;
+}
